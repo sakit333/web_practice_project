@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Solar Motion Simulation</title>
+    <link rel="stylesheet" type="text/css" href="motionstyle.css">
+</head>
+<body>
+    <div id="solar-system">
+        <div id="sun"></div>
+        <div class="planet mercury"></div>
+        <div class="planet venus"></div>
+        <div class="planet earth"></div>
+        <div class="planet mars"></div>
+    </div>
+
+    <script>
+        const planets = document.querySelectorAll('.planet');
+
+        let time = 0;
+        const orbitSpeeds = [0.2, 0.15, 0.1, 0.08]; // Adjust these values for different speeds
+
+        function animatePlanets() {
+            time += 0.1;
+
+            for (let i = 0; i < planets.length; i++) {
+                const planet = planets[i];
+                const orbitSpeed = orbitSpeeds[i];
+                const radius = (i + 1) * 80; // Increase the value to have larger orbits
+
+                const x = radius * Math.cos(time * orbitSpeed) + 300; // 300 is the x-coordinate of the center of the solar system
+                const y = radius * Math.sin(time * orbitSpeed) + 300; // 300 is the y-coordinate of the center of the solar system
+
+                planet.style.left = x + 'px';
+                planet.style.top = y + 'px';
+            }
+
+            requestAnimationFrame(animatePlanets);
+        }
+
+        animatePlanets();
+    </script>
+</body>
+</html>

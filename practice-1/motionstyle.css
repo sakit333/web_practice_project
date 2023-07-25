@@ -1,0 +1,35 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+}
+#solar-system {
+    position: relative;
+    width: 600px;
+    height: 600px;
+    margin: 20px auto;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    background-color: #000;
+    overflow: hidden;
+}
+.planet {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ccc;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+}
+#sun {
+    width: 50px;
+    height: 50px;
+    background-color: #ff0;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
